@@ -46,4 +46,6 @@ const (
 	RejectGameEventKey     = "GameRejected"
 	RejectGameEventCreator = "Creator"
 	RejectGameEventIdValue = "IdValue"
+
+	NoFifoIdKey = "-1"
 )

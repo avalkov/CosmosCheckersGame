@@ -3,6 +3,8 @@ export declare const protobufPackage = "avalkov.cosmoscheckersgame.cosmoschecker
 export interface NextGame {
     creator: string;
     idValue: number;
+    fifoHead: string;
+    fifoTail: string;
 }
 export declare const NextGame: {
     encode(message: NextGame, writer?: Writer): Writer;

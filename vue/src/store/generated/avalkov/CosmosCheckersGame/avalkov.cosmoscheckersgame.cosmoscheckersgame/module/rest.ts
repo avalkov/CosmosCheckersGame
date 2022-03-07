@@ -31,6 +31,8 @@ export interface CosmoscheckersgameNextGame {
 
   /** @format uint64 */
   idValue?: string;
+  fifoHead?: string;
+  fifoTail?: string;
 }
 
 export interface CosmoscheckersgameQueryAllStoredGameResponse {
@@ -66,6 +68,8 @@ export interface CosmoscheckersgameStoredGame {
 
   /** @format uint64 */
   moveCount?: string;
+  beforeId?: string;
+  afterId?: string;
 }
 
 export interface ProtobufAny {
