@@ -1,0 +1,12 @@
+syntax = "proto3";
+package avalkov.cosmoscheckersgame.cosmoscheckersgame;
+
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/avalkov/CosmosCheckersGame/x/cosmoscheckersgame/types";
+
+// GenesisState defines the cosmoscheckersgame module's genesis state.
+message GenesisState {
+    // this line is used by starport scaffolding # genesis/proto/state
+    // this line is used by starport scaffolding # ibc/genesis/proto
+}
