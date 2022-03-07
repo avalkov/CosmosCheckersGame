@@ -1,0 +1,11 @@
+syntax = "proto3";
+package avalkov.cosmoscheckersgame.cosmoscheckersgame;
+
+option go_package = "github.com/avalkov/CosmosCheckersGame/x/cosmoscheckersgame/types";
+
+import "gogoproto/gogo.proto";
+
+message NextGame {
+  string creator = 1;
+  uint64 idValue = 2; 
+}

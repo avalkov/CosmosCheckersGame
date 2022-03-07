@@ -4,12 +4,24 @@ package avalkov.cosmoscheckersgame.cosmoscheckersgame;
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 // this line is used by starport scaffolding # 1
+import "cosmoscheckersgame/next_game.proto";
 
 option go_package = "github.com/avalkov/CosmosCheckersGame/x/cosmoscheckersgame/types";
 
 // Query defines the gRPC querier service.
 service Query {
     // this line is used by starport scaffolding # 2
+
+	// Queries a nextGame by index.
+	rpc NextGame(QueryGetNextGameRequest) returns (QueryGetNextGameResponse) {
+		option (google.api.http).get = "/avalkov/cosmoscheckersgame/cosmoscheckersgame/nextGame";
+	}
+
 }
 
 // this line is used by starport scaffolding # 3
+message QueryGetNextGameRequest {}
+
+message QueryGetNextGameResponse {
+	NextGame NextGame = 1;
+}
