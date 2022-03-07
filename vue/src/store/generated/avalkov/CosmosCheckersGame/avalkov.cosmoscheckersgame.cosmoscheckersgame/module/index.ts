@@ -4,10 +4,14 @@ import { StdFee } from "@cosmjs/launchpad";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { Registry, OfflineSigner, EncodeObject, DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { Api } from "./rest";
+import { MsgPlayMove } from "./types/cosmoscheckersgame/tx";
+import { MsgRejectGame } from "./types/cosmoscheckersgame/tx";
 import { MsgCreateGame } from "./types/cosmoscheckersgame/tx";
 
 
 const types = [
+  ["/avalkov.cosmoscheckersgame.cosmoscheckersgame.MsgPlayMove", MsgPlayMove],
+  ["/avalkov.cosmoscheckersgame.cosmoscheckersgame.MsgRejectGame", MsgRejectGame],
   ["/avalkov.cosmoscheckersgame.cosmoscheckersgame.MsgCreateGame", MsgCreateGame],
   
 ];
@@ -37,6 +41,8 @@ const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions =
 
   return {
     signAndBroadcast: (msgs: EncodeObject[], { fee, memo }: SignAndBroadcastOptions = {fee: defaultFee, memo: ""}) => client.signAndBroadcast(address, msgs, fee,memo),
+    msgPlayMove: (data: MsgPlayMove): EncodeObject => ({ typeUrl: "/avalkov.cosmoscheckersgame.cosmoscheckersgame.MsgPlayMove", value: data }),
+    msgRejectGame: (data: MsgRejectGame): EncodeObject => ({ typeUrl: "/avalkov.cosmoscheckersgame.cosmoscheckersgame.MsgRejectGame", value: data }),
     msgCreateGame: (data: MsgCreateGame): EncodeObject => ({ typeUrl: "/avalkov.cosmoscheckersgame.cosmoscheckersgame.MsgCreateGame", value: data }),
     
   };

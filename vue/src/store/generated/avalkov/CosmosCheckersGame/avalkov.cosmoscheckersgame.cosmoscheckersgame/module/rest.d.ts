@@ -1,6 +1,15 @@
 export interface CosmoscheckersgameMsgCreateGameResponse {
     idValue?: string;
 }
+export interface CosmoscheckersgameMsgPlayMoveResponse {
+    idValue?: string;
+    /** @format int64 */
+    capturedX?: string;
+    /** @format int64 */
+    capturedY?: string;
+    winner?: string;
+}
+export declare type CosmoscheckersgameMsgRejectGameResponse = object;
 export interface CosmoscheckersgameNextGame {
     creator?: string;
     /** @format uint64 */
@@ -32,6 +41,8 @@ export interface CosmoscheckersgameStoredGame {
     turn?: string;
     red?: string;
     black?: string;
+    /** @format uint64 */
+    moveCount?: string;
 }
 export interface ProtobufAny {
     "@type"?: string;
